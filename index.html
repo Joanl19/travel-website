@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<title>Tatva | India — Curated Journeys</title>
+<title>Tripza | India — Curated Journeys</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
@@ -48,112 +48,80 @@
 
   /* Navigation */
   .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(249, 245, 235, 0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-light);
-  padding: 1rem 0;
-  transition: all 0.3s;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(249, 245, 235, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 1rem 0;
+    transition: all 0.3s;
+  }
 
-.nav-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  .nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-/* LOGO */
-.logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  font-family: 'Cormorant Garamond', serif;
-}
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+  }
 
-.logo span {
-  color: var(--terracotta);
-}
-
-/* NAV LINKS (desktop) */
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--deep-charcoal);
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.nav-links a:hover {
-  color: var(--terracotta);
-}
-
-/* RIGHT SIDE */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* BUTTON */
-.nav-btn {
-  background: var(--deep-charcoal);
-  color: white;
-  border: none;
-  padding: 0.6rem 1.6rem;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.nav-btn:hover {
-  background: var(--terracotta);
-  transform: translateY(-2px);
-}
-
-/* MENU ICON */
-.menu-icon {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--deep-charcoal);
-}
-@media (max-width: 768px) {
+  .logo span {
+    color: var(--terracotta);
+  }
 
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: white;
-    flex-direction: column;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
-  }
-
-  .nav-links.active {
     display: flex;
+    gap: 2rem;
+    list-style: none;
   }
 
-  .menu-icon {
-    display: block;
+  .nav-links a {
+    text-decoration: none;
+    color: var(--deep-charcoal);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .nav-links a:hover {
+    color: var(--terracotta);
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   .nav-btn {
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem;
+    background: var(--deep-charcoal);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.6rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
   }
-}
+
+  .nav-btn:hover {
+    background: var(--terracotta);
+    transform: translateY(-2px);
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--deep-charcoal);
+  }
 
   /* Hero Section */
   .hero {
@@ -404,20 +372,19 @@
     color: #6b6b6b;
     line-height: 1.5;
   }
-  .exp-card:hover .exp-img {
-  transform: scale(1.05);
-}
 
-.exp-img {
-  transition: 0.3s;
-}
-.exp-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 1rem;
-}
+  .exp-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+  }
+
+  .exp-card:hover .exp-img {
+    transform: scale(1.05);
+  }
 
   /* Package Cards */
   .pkg-grid {
@@ -634,6 +601,7 @@
     text-decoration: none;
     font-size: 0.85rem;
     transition: color 0.3s;
+    cursor: pointer;
   }
 
   .footer-col ul li a:hover {
@@ -645,6 +613,128 @@
     padding-top: 2rem;
     border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 0.75rem;
+  }
+
+  /* MODAL STYLES */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+  }
+
+  .modal-content {
+    background: white;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 30px;
+    padding: 2rem;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+  }
+
+  .close-modal:hover {
+    color: var(--terracotta);
+  }
+
+  .modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--deep-charcoal);
+  }
+
+  .modal-sub {
+    color: #777;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--deep-charcoal);
+  }
+
+  .form-group input, 
+  .form-group select, 
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus, 
+  .form-group select:focus, 
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--terracotta);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .submit-btn {
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn:hover {
+    background: #b04e2e;
+    transform: translateY(-2px);
   }
 
   /* Animations */
@@ -670,7 +760,7 @@
     transform: translateY(0);
   }
 
-  /* Mobile Menu */
+  /* Mobile Responsive */
   @media (max-width: 768px) {
     .container {
       padding: 0 20px;
@@ -762,11 +852,7 @@
 
 <nav class="navbar">
   <div class="container nav-flex">
-
-    <!-- LEFT -->
-    <div class="logo">TATVA<span>.</span></div>
-
-    <!-- CENTER (Desktop links) -->
+    <div class="logo">Tripza<span>.</span></div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#destinations">Destinations</a></li>
@@ -774,18 +860,12 @@
       <li><a href="#packages">Packages</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
-    <!-- RIGHT -->
     <div class="nav-right">
-      <button class="nav-btn" onclick="showToast('✨ A travel curator will reach out soon')">
-        Enquire Now
-      </button>
-
+      <button class="nav-btn" onclick="openBookingForm('General Enquiry')">Enquire Now</button>
       <div class="menu-icon" id="menuToggle">
         <i class="fas fa-bars"></i>
       </div>
     </div>
-
   </div>
 </nav>
 
@@ -798,7 +878,7 @@
       <p class="hero-desc">Privately guided journeys through India's most authentic corners — from royal Rajasthan to the serene backwaters of Kerala. Every detail, crafted for you.</p>
       <div class="hero-buttons">
         <button class="btn-primary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">Explore Journeys</button>
-        <button class="btn-outline" onclick="showToast('Calling a travel expert...')">Talk to Expert</button>
+        <button class="btn-outline" onclick="openBookingForm('Expert Consultation')">Talk to Expert</button>
       </div>
       <div class="stats">
         <div class="stat"><h3>28+</h3><p>States</p></div>
@@ -821,19 +901,19 @@
       <p class="section-sub">From desert forts to tropical shores — India's magic awaits</p>
     </div>
     <div class="dest-grid fade-up">
-      <div class="dest-card" onclick="showToast('Exploring Rajasthan journeys')">
-        <div class="dest-img"><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFqYXN0aGFufGVufDB8fDB8fHww" alt="Rajasthan" loading="lazy"></div>
+      <div class="dest-card" onclick="openBookingForm('Rajasthan - Royal Heritage')">
+        <div class="dest-img"><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Rajasthan" loading="lazy"></div>
         <div class="dest-info"><div class="dest-name">Rajasthan</div><div class="dest-location">Royal Heritage</div><div class="dest-price">From ₹22,999</div></div>
       </div>
-      <div class="dest-card" onclick="showToast('Exploring Kerala journeys')">
+      <div class="dest-card" onclick="openBookingForm('Kerala - Backwaters')">
         <div class="dest-img"><img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600&q=80" alt="Kerala" loading="lazy"></div>
         <div class="dest-info"><div class="dest-name">Kerala</div><div class="dest-location">Backwaters & Ayurveda</div><div class="dest-price">From ₹18,499</div></div>
       </div>
-      <div class="dest-card" onclick="showToast('Exploring Ladakh journeys')">
+      <div class="dest-card" onclick="openBookingForm('Ladakh - Mountain Adventure')">
         <div class="dest-img"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Ladakh" loading="lazy"></div>
         <div class="dest-info"><div class="dest-name">Ladakh</div><div class="dest-location">Mountain Adventure</div><div class="dest-price">From ₹29,999</div></div>
       </div>
-      <div class="dest-card" onclick="showToast('Exploring Goa journeys')">
+      <div class="dest-card" onclick="openBookingForm('Goa - Beaches')">
         <div class="dest-img"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="Goa" loading="lazy"></div>
         <div class="dest-info"><div class="dest-name">Goa</div><div class="dest-location">Sun & Beaches</div><div class="dest-price">From ₹12,999</div></div>
       </div>
@@ -850,32 +930,27 @@
       <p class="section-sub">Experiences that speak to your soul</p>
     </div>
     <div class="exp-grid fade-up">
-
-  <div class="exp-card" onclick="showToast('Spiritual journeys available')">
-    <img src="https://plus.unsplash.com/premium_photo-1697730447144-a2f7257e4a1f?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNwaXJpdHVhbCUyMGluZGlhfGVufDB8fDB8fHww" class="exp-img">
-    <h4>Spiritual Trails</h4>
-    <p>Varanasi, Rishikesh, Amritsar — sacred journeys</p>
-  </div>
-
-  <div class="exp-card" onclick="showToast('Culinary tours available')">
-    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D" class="exp-img">
-    <h4>Culinary Escapes</h4>
-    <p>Street food, royal thalis, spice markets</p>
-  </div>
-
-  <div class="exp-card" onclick="showToast('Wildlife safaris available')">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTad4NWESloVeOOrE2hisFmVBqIvzCaFMhrsw&s" class="exp-img">
-    <h4>Wildlife Safaris</h4>
-    <p>Tigers, elephants, rhinos in national parks</p>
-  </div>
-
-  <div class="exp-card" onclick="showToast('Wellness retreats available')">
-    <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lZGl0YXRpb258ZW58MHx8MHx8fDA%3D" class="exp-img">
-    <h4>Wellness Retreats</h4>
-    <p>Ayurveda, yoga, meditation escapes</p>
-  </div>
-
-</div>
+      <div class="exp-card" onclick="openBookingForm('Spiritual Trails')">
+        <img src="https://plus.unsplash.com/premium_photo-1697730447144-a2f7257e4a1f?fm=jpg&q=60&w=3000&auto=format&fit=crop" class="exp-img">
+        <h4>Spiritual Trails</h4>
+        <p>Varanasi, Rishikesh, Amritsar — sacred journeys</p>
+      </div>
+      <div class="exp-card" onclick="openBookingForm('Culinary Escapes')">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?fm=jpg&q=60&w=3000&auto=format&fit=crop" class="exp-img">
+        <h4>Culinary Escapes</h4>
+        <p>Street food, royal thalis, spice markets</p>
+      </div>
+      <div class="exp-card" onclick="openBookingForm('Wildlife Safaris')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTad4NWESloVeOOrE2hisFmVBqIvzCaFMhrsw&s" class="exp-img">
+        <h4>Wildlife Safaris</h4>
+        <p>Tigers, elephants, rhinos in national parks</p>
+      </div>
+      <div class="exp-card" onclick="openBookingForm('Wellness Retreats')">
+        <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?fm=jpg&q=60&w=3000&auto=format&fit=crop" class="exp-img">
+        <h4>Wellness Retreats</h4>
+        <p>Ayurveda, yoga, meditation escapes</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -890,15 +965,15 @@
     <div class="pkg-grid fade-up">
       <div class="pkg-card">
         <div class="pkg-img"><img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Rajasthan" loading="lazy"><span class="pkg-badge">⭐ Bestseller</span><span class="pkg-days">7 Days</span></div>
-        <div class="pkg-info"><div class="pkg-title">Royal Rajasthan</div><div class="pkg-loc">Jaipur · Jodhpur · Udaipur</div><div class="pkg-features"><span class="pkg-feature">🏨 Palace Hotels</span><span class="pkg-feature">🐪 Camel Safari</span><span class="pkg-feature">🎭 Folk Show</span></div><div class="pkg-footer"><div class="pkg-price">₹24,999 <small>/person</small></div><button class="book-btn" onclick="showToast('Booking inquiry sent for Royal Rajasthan')">Book Now</button></div></div>
+        <div class="pkg-info"><div class="pkg-title">Royal Rajasthan</div><div class="pkg-loc">Jaipur · Jodhpur · Udaipur</div><div class="pkg-features"><span class="pkg-feature">🏨 Palace Hotels</span><span class="pkg-feature">🐪 Camel Safari</span><span class="pkg-feature">🎭 Folk Show</span></div><div class="pkg-footer"><div class="pkg-price">₹24,999 <small>/person</small></div><button class="book-btn" onclick="event.stopPropagation(); openBookingForm('Royal Rajasthan Package')">Book Now</button></div></div>
       </div>
       <div class="pkg-card">
         <div class="pkg-img"><img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Kerala" loading="lazy"><span class="pkg-badge">🌿 Popular</span><span class="pkg-days">5 Days</span></div>
-        <div class="pkg-info"><div class="pkg-title">Kerala Serenity</div><div class="pkg-loc">Munnar · Alleppey · Kovalam</div><div class="pkg-features"><span class="pkg-feature">🛶 Houseboat</span><span class="pkg-feature">🧖 Ayurveda</span><span class="pkg-feature">🍛 Seafood</span></div><div class="pkg-footer"><div class="pkg-price">₹18,999 <small>/person</small></div><button class="book-btn" onclick="showToast('Booking inquiry sent for Kerala Serenity')">Book Now</button></div></div>
+        <div class="pkg-info"><div class="pkg-title">Kerala Serenity</div><div class="pkg-loc">Munnar · Alleppey · Kovalam</div><div class="pkg-features"><span class="pkg-feature">🛶 Houseboat</span><span class="pkg-feature">🧖 Ayurveda</span><span class="pkg-feature">🍛 Seafood</span></div><div class="pkg-footer"><div class="pkg-price">₹18,999 <small>/person</small></div><button class="book-btn" onclick="event.stopPropagation(); openBookingForm('Kerala Serenity Package')">Book Now</button></div></div>
       </div>
       <div class="pkg-card">
         <div class="pkg-img"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Ladakh" loading="lazy"><span class="pkg-badge">🏔️ Adventure</span><span class="pkg-days">8 Days</span></div>
-        <div class="pkg-info"><div class="pkg-title">Ladakh Odyssey</div><div class="pkg-loc">Leh · Pangong · Nubra</div><div class="pkg-features"><span class="pkg-feature">🏕️ Camping</span><span class="pkg-feature">🏍️ Bike Ride</span><span class="pkg-feature">🌄 Pangong</span></div><div class="pkg-footer"><div class="pkg-price">₹31,999 <small>/person</small></div><button class="book-btn" onclick="showToast('Booking inquiry sent for Ladakh Odyssey')">Book Now</button></div></div>
+        <div class="pkg-info"><div class="pkg-title">Ladakh Odyssey</div><div class="pkg-loc">Leh · Pangong · Nubra</div><div class="pkg-features"><span class="pkg-feature">🏕️ Camping</span><span class="pkg-feature">🏍️ Bike Ride</span><span class="pkg-feature">🌄 Pangong</span></div><div class="pkg-footer"><div class="pkg-price">₹31,999 <small>/person</small></div><button class="book-btn" onclick="event.stopPropagation(); openBookingForm('Ladakh Odyssey Package')">Book Now</button></div></div>
       </div>
     </div>
   </div>
@@ -925,7 +1000,7 @@
   <div class="cta fade-up">
     <h2>Your India Story Begins Here</h2>
     <p>Talk to our travel architects — no obligations, just inspiration.</p>
-    <button class="btn-primary" onclick="showToast('A personal curator will contact you within 2 hours')">Start Planning →</button>
+    <button class="btn-primary" onclick="openBookingForm('Start Planning')">Start Planning →</button>
   </div>
 </section>
 
@@ -933,14 +1008,59 @@
 <footer id="contact">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col"><h4>TATVA</h4><p style="font-size:0.85rem; opacity:0.6;">India's finest travel curators, crafting extraordinary journeys since 2012.</p></div>
-      <div class="footer-col"><h4>Destinations</h4><ul><li><a href="#" onclick="showToast('Rajasthan tours'); return false;">Rajasthan</a></li><li><a href="#" onclick="showToast('Kerala tours'); return false;">Kerala</a></li><li><a href="#" onclick="showToast('Ladakh tours'); return false;">Ladakh</a></li><li><a href="#" onclick="showToast('Goa tours'); return false;">Goa</a></li></ul></div>
-      <div class="footer-col"><h4>Support</h4><ul><li><a href="#" onclick="showToast('Contact support'); return false;">Contact Us</a></li><li><a href="#" onclick="showToast('FAQs'); return false;">FAQs</a></li><li><a href="#" onclick="showToast('Cancellation policy'); return false;">Cancellation</a></li><li><a href="#" onclick="showToast('Terms'); return false;">Terms</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#" onclick="showToast('Call us'); return false;">📞 +91 11 4000 8000</a></li><li><a href="#" onclick="showToast('Email us'); return false;">✉️ hello@tatva.travel</a></li><li><a href="#" onclick="showToast('Instagram'); return false;">📸 @tatva.travel</a></li></ul></div>
+      <div class="footer-col"><h4>Tripza</h4><p style="font-size:0.85rem; opacity:0.6;">India's finest travel curators, crafting extraordinary journeys since 2012.</p></div>
+      <div class="footer-col"><h4>Destinations</h4><ul><li><a onclick="openBookingForm('Rajasthan tours'); return false;">Rajasthan</a></li><li><a onclick="openBookingForm('Kerala tours'); return false;">Kerala</a></li><li><a onclick="openBookingForm('Ladakh tours'); return false;">Ladakh</a></li><li><a onclick="openBookingForm('Goa tours'); return false;">Goa</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul><li><a onclick="openBookingForm('Contact Support'); return false;">Contact Us</a></li><li><a onclick="openBookingForm('FAQ'); return false;">FAQs</a></li><li><a onclick="openBookingForm('Cancellation Policy'); return false;">Cancellation</a></li><li><a onclick="openBookingForm('Terms'); return false;">Terms</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a onclick="openBookingForm('Call Enquiry'); return false;">📞 +91 11 4000 8000</a></li><li><a onclick="openBookingForm('Email Enquiry'); return false;">✉️ hello@Tripza.travel</a></li><li><a onclick="openBookingForm('Instagram'); return false;">📸 @Tripza.travel</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 TATVA — Discover India's Soul</span></div>
+    <div class="footer-bottom"><span>© 2026 Tripza — Discover India's Soul</span></div>
   </div>
 </footer>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Plan Your Journey</h3>
+    <div class="modal-sub" id="modalPackageInfo">Fill the details below and our travel curator will reach out within 2 hours</div>
+    
+    <form id="bookingForm" onsubmit="submitBookingForm(event)">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="fullName" required placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Phone Number *</label>
+        <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX">
+      </div>
+      <div class="form-group">
+        <label>Travel Date (Preferred)</label>
+        <input type="date" id="travelDate">
+      </div>
+      <div class="form-group">
+        <label>Number of Travelers</label>
+        <select id="travelers">
+          <option value="1">1 Traveler</option>
+          <option value="2" selected>2 Travelers</option>
+          <option value="3">3 Travelers</option>
+          <option value="4">4 Travelers</option>
+          <option value="5">5+ Travelers</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Additional Message / Special Requests</label>
+        <textarea id="message" placeholder="Tell us about your dream journey, preferences, or any special requests..."></textarea>
+      </div>
+      <input type="hidden" id="packageName" value="">
+      <button type="submit" class="submit-btn">✈️ Send Enquiry</button>
+    </form>
+    <p style="font-size: 0.7rem; color: #999; text-align: center; margin-top: 1rem;">We respect your privacy. No spam, ever.</p>
+  </div>
+</div>
 
 <script>
   // Mobile menu toggle
@@ -951,7 +1071,6 @@
     navLinks.classList.toggle('show');
   });
 
-  // Close menu when clicking a link
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('show');
@@ -969,48 +1088,57 @@
   
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Toast notification function
-  function showToast(message) {
-    const existing = document.querySelector('.toast-message');
-    if (existing) existing.remove();
+  // Modal Functions
+  const modal = document.getElementById('bookingModal');
+  const modalPackageInfo = document.getElementById('modalPackageInfo');
+  const packageNameInput = document.getElementById('packageName');
+
+  function openBookingForm(packageTitle) {
+    packageNameInput.value = packageTitle;
+    modalPackageInfo.innerHTML = `You're inquiring about: <strong style="color: #C65D3B;">${packageTitle}</strong><br>Fill the details below and our travel curator will reach out within 2 hours.`;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  document.querySelector('.close-modal').addEventListener('click', closeModal);
+  
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Form submission
+  function submitBookingForm(event) {
+    event.preventDefault();
     
-    const toast = document.createElement('div');
-    toast.className = 'toast-message';
-    toast.textContent = message;
-    toast.style.cssText = `
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      background: #1A1E24;
-      color: white;
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      z-index: 10000;
-      font-weight: 500;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      border-left: 3px solid #C65D3B;
-      white-space: nowrap;
-      max-width: 90vw;
-      white-space: normal;
-      text-align: center;
-      transition: all 0.3s ease;
-      opacity: 0;
-      pointer-events: none;
-    `;
-    document.body.appendChild(toast);
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const travelDate = document.getElementById('travelDate').value;
+    const travelers = document.getElementById('travelers').value;
+    const message = document.getElementById('message').value;
+    const packageName = document.getElementById('packageName').value;
     
-    setTimeout(() => {
-      toast.style.opacity = '1';
-      toast.style.transform = 'translateX(-50%) translateY(0)';
-    }, 10);
+    // Simple validation
+    if (!fullName || !email || !phone) {
+      alert('Please fill in all required fields (*)');
+      return;
+    }
     
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateX(-50%) translateY(20px)';
-      setTimeout(() => toast.remove(), 300);
-    }, 2500);
+    // Show success message
+    alert(`✨ Thank you ${fullName}!\n\nYour enquiry for "${packageName}" has been received.\n\nOur travel curator will contact you at ${email} or ${phone} within 2 hours.\n\nTravel Date: ${travelDate || 'Flexible'}\nTravelers: ${travelers}\n\nWe look forward to crafting your perfect India journey!`);
+    
+    // Reset form and close modal
+    document.getElementById('bookingForm').reset();
+    closeModal();
+    
+    // Optional: You can add actual form submission to a backend here
   }
 
   // Smooth scroll for anchor links
@@ -1020,6 +1148,7 @@
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        navLinks.classList.remove('show');
       }
     });
   });
