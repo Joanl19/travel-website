@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BharatYatra – Discover Incredible India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B1A;
+    --gold: #D4A017;
+    --teal: #0A6E6E;
+    --deep: #0D1F22;
+    --cream: #FDF6EC;
+    --rose: #C1440E;
+    --text: #1A1A1A;
+    --muted: #6B6B6B;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(13,31,34,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212,160,23,0.2);
+    animation: slideDown .6s ease;
+  }
+
+  @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 900;
+    color: #fff; letter-spacing: -0.5px;
+  }
+  .logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: .9rem; font-weight: 500; letter-spacing: .5px;
+    transition: color .3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--saffron); color: #fff; border: none;
+    padding: .7rem 1.8rem; border-radius: 50px;
+    font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 600;
+    cursor: pointer; transition: all .3s; letter-spacing: .3px;
+  }
+  .nav-cta:hover { background: var(--rose); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,26,.4); }
+
+  /* ── HERO ── */
+  .hero {
+    height: 100vh; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse at 70% 50%, rgba(212,160,23,.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(255,107,26,.12) 0%, transparent 50%),
+      linear-gradient(160deg, #0D1F22 0%, #1A3A3A 40%, #0D2D2D 100%);
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: .06;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A017' fill-opacity='1'%3E%3Cpath d='M30 0l3.09 9.51H43.5l-8.37 6.08 3.19 9.82L30 19.4l-8.32 5.99 3.19-9.82L16.5 9.51h10.41z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    position: relative; text-align: center; padding: 0 2rem;
+    animation: heroFade 1s ease .3s both;
+  }
+
+  @keyframes heroFade { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  .hero-badge {
+    display: inline-block; background: rgba(212,160,23,.15);
+    border: 1px solid rgba(212,160,23,.4); color: var(--gold);
+    padding: .4rem 1.2rem; border-radius: 50px;
+    font-size: .8rem; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 1.5rem; font-weight: 600;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 900; color: #fff; line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em { color: var(--gold); font-style: italic; }
+
+  .hero p {
+    font-size: 1.15rem; color: rgba(255,255,255,.65);
+    max-width: 540px; margin: 0 auto 2.5rem;
+    line-height: 1.7; font-weight: 300;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--saffron); color: #fff; border: none;
+    padding: 1rem 2.5rem; border-radius: 50px;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    transition: all .3s; font-family: 'DM Sans', sans-serif;
+    box-shadow: 0 8px 32px rgba(255,107,26,.4);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(255,107,26,.5); background: var(--rose); }
+
+  .btn-outline {
+    background: transparent; color: #fff;
+    border: 1.5px solid rgba(255,255,255,.3);
+    padding: 1rem 2.5rem; border-radius: 50px;
+    font-size: 1rem; font-weight: 500; cursor: pointer;
+    transition: all .3s; font-family: 'DM Sans', sans-serif;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+
+  .hero-stats {
+    position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 4rem; animation: heroFade 1s ease .6s both;
+  }
+
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; color: var(--gold);
+  }
+  .stat-label { font-size: .8rem; color: rgba(255,255,255,.5); letter-spacing: 1px; text-transform: uppercase; }
+
+  .scroll-hint {
+    position: absolute; bottom: 1.5rem; right: 4rem;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    color: rgba(255,255,255,.4); font-size: .75rem; letter-spacing: 1px;
+    animation: heroFade 1s ease .9s both;
+  }
+
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  @keyframes scrollPulse { 0%,100%{ opacity: .3; } 50%{ opacity: 1; } }
+
+  /* ── SEARCH BAR ── */
+  .search-section {
+    padding: 3rem 4rem;
+    background: var(--deep);
+  }
+
+  .search-card {
+    max-width: 1100px; margin: 0 auto;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(212,160,23,.2);
+    border-radius: 20px; padding: 2rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 1rem; align-items: end;
+  }
+
+  .search-field { display: flex; flex-direction: column; gap: .5rem; }
+  .search-field label { font-size: .75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  .search-field input, .search-field select {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.1);
+    color: #fff; padding: .9rem 1.2rem; border-radius: 12px;
+    font-family: 'DM Sans', sans-serif; font-size: .95rem;
+    outline: none; transition: border-color .3s; width: 100%;
+  }
+  .search-field input::placeholder { color: rgba(255,255,255,.3); }
+  .search-field input:focus, .search-field select:focus { border-color: var(--gold); }
+  .search-field select option { background: var(--deep); }
+
+  .btn-search {
+    background: linear-gradient(135deg, var(--saffron), var(--rose));
+    color: #fff; border: none;
+    padding: .95rem 2rem; border-radius: 12px;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; white-space: nowrap;
+    transition: all .3s; box-shadow: 0 8px 24px rgba(255,107,26,.3);
+  }
+  .btn-search:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(255,107,26,.5); }
+
+  /* ── SECTION COMMONS ── */
+  .section { padding: 6rem 4rem; }
+  .section-alt { background: #fff; }
+
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-eyebrow {
+    display: inline-block; color: var(--saffron);
+    font-size: .8rem; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: .8rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+    color: var(--deep); line-height: 1.15;
+  }
+
+  .section-subtitle {
+    font-size: 1rem; color: var(--muted); max-width: 500px;
+    margin: 1rem auto 0; line-height: 1.7;
+  }
+
+  /* ── DESTINATIONS ── */
+  .destinations-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px; gap: 1.2rem;
+  }
+
+  .dest-card {
+    border-radius: 20px; overflow: hidden;
+    position: relative; cursor: pointer;
+    transition: transform .4s cubic-bezier(.25,.8,.25,1);
+  }
+
+  .dest-card:hover { transform: scale(1.02); }
+  .dest-card:hover .dest-overlay { opacity: 1; }
+  .dest-card:hover .dest-info { transform: translateY(0); }
+
+  .dest-card.tall { grid-row: 1 / 3; }
+
+  .dest-img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block; transition: transform .6s ease;
+  }
+  .dest-card:hover .dest-img { transform: scale(1.08); }
+
+  /* Placeholder colored backgrounds for destinations */
+  .dest-rajasthan { background: linear-gradient(135deg, #C1440E 0%, #8B2500 50%, #D4A017 100%); }
+  .dest-kerala { background: linear-gradient(135deg, #0A6E6E 0%, #1A5C2A 60%, #2E8B57 100%); }
+  .dest-goa { background: linear-gradient(135deg, #006994 0%, #0A4C6E 50%, #20B2AA 100%); }
+  .dest-himachal { background: linear-gradient(135deg, #4A4A8A 0%, #2D3461 60%, #A8C8E8 100%); }
+  .dest-varanasi { background: linear-gradient(135deg, #8B6914 0%, #C8960C 50%, #FF8C00 100%); }
+
+  .dest-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem; opacity: .4;
+  }
+
+  .dest-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.2) 50%, transparent 100%);
+    opacity: .7; transition: opacity .4s;
+  }
+
+  .dest-info {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1.8rem; color: #fff;
+    transform: translateY(10px); transition: transform .4s;
+  }
+
+  .dest-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700; margin-bottom: .3rem;
+  }
+  .dest-card.tall .dest-name { font-size: 2rem; }
+
+  .dest-meta { display: flex; align-items: center; gap: 1rem; }
+  .dest-tag {
+    background: rgba(212,160,23,.3); border: 1px solid var(--gold);
+    color: var(--gold); font-size: .75rem; font-weight: 600;
+    padding: .2rem .7rem; border-radius: 50px; letter-spacing: .5px;
+  }
+  .dest-pkg { font-size: .85rem; color: rgba(255,255,255,.7); }
+
+  /* ── PACKAGES ── */
+  .packages-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+
+  .pkg-card {
+    background: #fff; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    transition: all .4s cubic-bezier(.25,.8,.25,1);
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .pkg-card:hover { transform: translateY(-10px); box-shadow: 0 24px 60px rgba(0,0,0,.12); }
+
+  .pkg-img-wrap { height: 220px; position: relative; overflow: hidden; }
+  .pkg-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem;
+  }
+  .pkg-goa { background: linear-gradient(135deg, #006994, #20B2AA); }
+  .pkg-rajasthan { background: linear-gradient(135deg, #8B2500, #D4A017); }
+  .pkg-kerala { background: linear-gradient(135deg, #0A6E6E, #2E8B57); }
+
+  .pkg-badge {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--saffron); color: #fff;
+    font-size: .75rem; font-weight: 700; padding: .3rem .8rem;
+    border-radius: 50px; letter-spacing: .5px;
+  }
+  .pkg-badge.bestseller { background: var(--gold); color: var(--deep); }
+
+  .pkg-body { padding: 1.8rem; }
+  .pkg-duration { font-size: .8rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: .5rem; }
+  .pkg-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--deep); margin-bottom: .8rem; }
+  .pkg-features { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+  .pkg-feat {
+    font-size: .78rem; color: var(--teal); background: rgba(10,110,110,.08);
+    padding: .25rem .7rem; border-radius: 50px; font-weight: 500;
+  }
+  .pkg-footer { display: flex; align-items: center; justify-content: space-between; }
+  .pkg-price { }
+  .pkg-from { font-size: .75rem; color: var(--muted); }
+  .pkg-amount { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--saffron); }
+  .pkg-pp { font-size: .75rem; color: var(--muted); }
+  .btn-book {
+    background: var(--deep); color: #fff; border: none;
+    padding: .6rem 1.4rem; border-radius: 50px;
+    font-family: 'DM Sans', sans-serif; font-size: .85rem; font-weight: 600;
+    cursor: pointer; transition: all .3s;
+  }
+  .btn-book:hover { background: var(--saffron); transform: translateY(-2px); }
+
+  /* ── EXPERIENCES ── */
+  .experiences { background: var(--deep); }
+  .experiences .section-title { color: #fff; }
+  .experiences .section-subtitle { color: rgba(255,255,255,.5); }
+
+  .exp-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  }
+
+  .exp-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px; padding: 2rem 1.5rem;
+    text-align: center; cursor: pointer;
+    transition: all .4s; position: relative; overflow: hidden;
+  }
+  .exp-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--saffron), var(--rose));
+    opacity: 0; transition: opacity .4s;
+  }
+  .exp-card:hover::before { opacity: 1; }
+  .exp-card:hover { transform: translateY(-8px); border-color: transparent; }
+  .exp-card:hover .exp-icon, .exp-card:hover .exp-name, .exp-card:hover .exp-desc { color: #fff; }
+
+  .exp-icon { font-size: 2.5rem; margin-bottom: 1rem; position: relative; z-index: 1; display: block; }
+  .exp-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: .5rem; position: relative; z-index: 1; }
+  .exp-desc { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.6; position: relative; z-index: 1; transition: color .4s; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-wrap { max-width: 1200px; margin: 0 auto; }
+
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+
+  .testi-card {
+    background: var(--cream); border-radius: 20px; padding: 2rem;
+    border: 1px solid rgba(0,0,0,.06);
+    transition: all .4s;
+  }
+  .testi-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,.08); transform: translateY(-5px); }
+
+  .testi-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; }
+  .testi-text { font-size: .95rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 1rem; }
+  .testi-avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; font-weight: 700; color: #fff;
+  }
+  .av1 { background: linear-gradient(135deg, var(--saffron), var(--rose)); }
+  .av2 { background: linear-gradient(135deg, var(--teal), #2E8B57); }
+  .av3 { background: linear-gradient(135deg, var(--gold), #8B6914); }
+  .testi-name { font-weight: 600; font-size: .95rem; color: var(--deep); }
+  .testi-city { font-size: .8rem; color: var(--muted); }
+
+  /* ── WHY US ── */
+  .why-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; text-align: center;
+  }
+  .why-item { }
+  .why-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .why-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--deep); margin-bottom: .5rem; }
+  .why-text { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--rose) 100%);
+    padding: 5rem 4rem; text-align: center; position: relative; overflow: hidden;
+  }
+  .newsletter::before {
+    content: '🕌'; position: absolute; left: -2rem; bottom: -2rem;
+    font-size: 12rem; opacity: .08;
+  }
+  .newsletter::after {
+    content: '🐘'; position: absolute; right: -2rem; top: -2rem;
+    font-size: 12rem; opacity: .08;
+  }
+  .newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem); color: #fff; margin-bottom: .8rem;
+  }
+  .newsletter p { color: rgba(255,255,255,.8); margin-bottom: 2rem; font-size: 1rem; }
+  .nl-form {
+    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+  }
+  .nl-input {
+    padding: 1rem 1.8rem; border-radius: 50px; border: none;
+    font-family: 'DM Sans', sans-serif; font-size: 1rem;
+    width: 320px; outline: none; color: var(--deep);
+  }
+  .nl-btn {
+    padding: 1rem 2.2rem; border-radius: 50px; border: 2px solid #fff;
+    background: transparent; color: #fff;
+    font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+    cursor: pointer; transition: all .3s;
+  }
+  .nl-btn:hover { background: #fff; color: var(--saffron); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep); padding: 4rem 4rem 2rem;
+  }
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem;
+    padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 1rem; }
+  .footer-logo span { color: var(--gold); }
+  .footer-tagline { color: rgba(255,255,255,.45); font-size: .9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+  .footer-socials { display: flex; gap: .8rem; }
+  .social-btn {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; cursor: pointer; transition: all .3s;
+  }
+  .social-btn:hover { background: var(--saffron); border-color: var(--saffron); }
+
+  .footer-col h4 { color: var(--gold); font-size: .8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 1.5rem; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: .8rem; }
+  .footer-col ul li a { color: rgba(255,255,255,.45); text-decoration: none; font-size: .9rem; transition: color .3s; }
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1200px; margin: 2rem auto 0;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-copy { color: rgba(255,255,255,.3); font-size: .85rem; }
+  .footer-legal { display: flex; gap: 2rem; }
+  .footer-legal a { color: rgba(255,255,255,.3); font-size: .85rem; text-decoration: none; transition: color .3s; }
+  .footer-legal a:hover { color: var(--gold); }
+
+  /* Animations on scroll */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .section { padding: 4rem 1.5rem; }
+    .search-section { padding: 2rem 1.5rem; }
+    .search-card { grid-template-columns: 1fr; }
+    .destinations-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .dest-card.tall { grid-row: auto; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .exp-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    .hero-stats { gap: 2rem; }
+  }
+  .exp-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Bharat<span>Yatra</span></div>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#experiences">Experiences</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="scrollToPackages()">Plan Your Trip</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Incredible India Awaits ✦</div>
+    <h1>Discover the<br>Soul of <em>Bharat</em></h1>
+    <p>From the golden deserts of Rajasthan to the lush backwaters of Kerala — experience India's magic with expertly curated journeys.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="scrollToPackages()">Explore Packages</button>
+      <button class="btn-outline" onclick="scrollToDestinations()">View Destinations</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Destinations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">50K+</div>
+      <div class="stat-label">Happy Travelers</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<section class="search-section">
+  <div class="search-card">
+    <div class="search-field">
+      <label>Destination</label>
+      <input type="text" placeholder="e.g. Goa, Rajasthan, Kerala...">
+    </div>
+    <div class="search-field">
+      <label>Travel Date</label>
+      <input type="date">
+    </div>
+    <div class="search-field">
+      <label>Tour Type</label>
+      <select>
+        <option value="">Select Type</option>
+        <option>Family Tour</option>
+        <option>Honeymoon Package</option>
+        <option>Adventure Tour</option>
+        <option>Pilgrimage Tour</option>
+        <option>Budget Tour</option>
+        <option>Luxury Tour</option>
+      </select>
+    </div>
+    <button class="btn-search" onclick="handleSearch()">🔍 Search Tours</button>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations" class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">✦ Top Picks</span>
+    <h2 class="section-title">Iconic Indian Destinations</h2>
+    <p class="section-subtitle">From royal palaces to serene beaches, India offers a lifetime of experiences in every corner.</p>
+  </div>
+  <div class="destinations-grid fade-up">
+    <div class="dest-card tall dest-rajasthan" onclick="showDest('Rajasthan')">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1631987398000-e627564b3847?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFqYXNodGhhbnxlbnwwfHwwfHx8MA%3D%3D" alt="Rajasthan">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-name">Rajasthan</div>
+        <div class="dest-meta">
+          <span class="dest-tag">Trending</span>
+          <span class="dest-pkg">Packages from ₹18,999</span>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card dest-kerala" onclick="showDest('Kerala')">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2VyYWxhJTIwdG91cmlzbXxlbnwwfHwwfHx8MA%3D%3D" alt="Kerala">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-name">Kerala</div>
+        <div class="dest-meta">
+          <span class="dest-tag">Popular</span>
+          <span class="dest-pkg">From ₹15,999</span>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card dest-himachal" onclick="showDest('Himachal Pradesh')">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b" alt="Himachal">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-name">Himachal Pradesh</div>
+        <div class="dest-meta">
+          <span class="dest-tag">Adventure</span>
+          <span class="dest-pkg">From ₹12,999</span>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card dest-goa" onclick="showDest('Goa')">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206" alt="Goa">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-name">Goa</div>
+        <div class="dest-meta">
+          <span class="dest-tag">Beach</span>
+          <span class="dest-pkg">From ₹9,999</span>
+        </div>
+      </div>
+    </div>
+    <div class="dest-card dest-varanasi" onclick="showDest('Varanasi')">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1599831069477-b2acdc0bcb91?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmFyYW5hc2l8ZW58MHx8MHx8fDA%3D" alt="Varanasi">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-name">Varanasi</div>
+        <div class="dest-meta">
+          <span class="dest-tag">Spiritual</span>
+          <span class="dest-pkg">From ₹8,499</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="section section-alt">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">✦ Best Value</span>
+    <h2 class="section-title">Handpicked Tour Packages</h2>
+    <p class="section-subtitle">All-inclusive packages designed for every traveler — from budget explorers to luxury seekers.</p>
+  </div>
+  <div class="packages-grid fade-up">
+
+    <div class="pkg-card">
+      <div class="pkg-img-wrap pkg-rajasthan">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1599661046289-e31897846e41" alt="Rajasthan">
+        <span class="pkg-badge bestseller">⭐ Bestseller</span>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-duration">7 Days / 6 Nights</div>
+        <div class="pkg-title">Royal Rajasthan Odyssey</div>
+        <div class="pkg-features">
+          <span class="pkg-feat">🏨 4-Star Hotels</span>
+          <span class="pkg-feat">🍽️ Meals Included</span>
+          <span class="pkg-feat">🚌 AC Transport</span>
+          <span class="pkg-feat">🎭 Folk Show</span>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">
+            <div class="pkg-from">Starting from</div>
+            <div class="pkg-amount">₹24,999</div>
+            <div class="pkg-pp">per person</div>
+          </div>
+          <button class="btn-book" onclick="bookPackage('Royal Rajasthan Odyssey')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img-wrap pkg-kerala">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2" alt="Kerala">
+        <span class="pkg-badge">New</span>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-duration">5 Days / 4 Nights</div>
+        <div class="pkg-title">Kerala Backwaters & Bliss</div>
+        <div class="pkg-features">
+          <span class="pkg-feat">🛶 Houseboat Stay</span>
+          <span class="pkg-feat">🧖 Ayurveda Spa</span>
+          <span class="pkg-feat">🍽️ Meals Included</span>
+          <span class="pkg-feat">🐘 Elephant Ride</span>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">
+            <div class="pkg-from">Starting from</div>
+            <div class="pkg-amount">₹19,499</div>
+            <div class="pkg-pp">per person</div>
+          </div>
+          <button class="btn-book" onclick="bookPackage('Kerala Backwaters & Bliss')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img-wrap pkg-goa">
+        <img class="dest-img" src="https://images.unsplash.com/photo-1682743710558-b338ba285925?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z29hJTIwYmVhY2h8ZW58MHx8MHx8fDA%3D" alt="goa">
+        <span class="pkg-badge">Hot Deal</span>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-duration">4 Days / 3 Nights</div>
+        <div class="pkg-title">Goa Beach Getaway</div>
+        <div class="pkg-features">
+          <span class="pkg-feat">🏖️ Beach Resort</span>
+          <span class="pkg-feat">🤿 Water Sports</span>
+          <span class="pkg-feat">🍹 All Meals</span>
+          <span class="pkg-feat">🛥️ Cruise</span>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">
+            <div class="pkg-from">Starting from</div>
+            <div class="pkg-amount">₹12,999</div>
+            <div class="pkg-pp">per person</div>
+          </div>
+          <button class="btn-book" onclick="bookPackage('Goa Beach Getaway')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top: 3rem;">
+    <button class="btn-primary" onclick="showAllPackages()">View All 50+ Packages →</button>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section id="experiences" class="section experiences">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">✦ Unique Experiences</span>
+    <h2 class="section-title">Travel Your Way</h2>
+    <p class="section-subtitle">Choose the kind of journey that speaks to your soul.</p>
+  </div>
+  <div class="exp-grid fade-up">
+    <div class="exp-card">
+  <img class="exp-img" 
+  src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=800&q=80" 
+  alt="Spiritual Journeys">
+
+  <div class="exp-name">Spiritual Journeys</div>
+  <div class="exp-desc">
+    Visit Varanasi, Rishikesh, Tirupati, Amritsar & more sacred sites across India.
+  </div>
+</div>
+    <div class="exp-card">
+      <span class="exp-icon">🏔️</span>
+      <div class="exp-name">Adventure Trails</div>
+      <div class="exp-desc">Trek in Himachal, camp in Ladakh, and raft in Rishikesh with expert guides.</div>
+    </div>
+    <div class="exp-card">
+      <span class="exp-icon">🍛</span>
+      <div class="exp-name">Food & Culture</div>
+      <div class="exp-desc">Culinary tours through street food capitals — Mumbai, Delhi, Kolkata, Chennai.</div>
+    </div>
+    <div class="exp-card">
+      <span class="exp-icon">💑</span>
+      <div class="exp-name">Honeymoon Special</div>
+      <div class="exp-desc">Romantic getaways curated for couples — Udaipur, Coorg, Andaman & beyond.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section section-alt">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">✦ Why BharatYatra</span>
+    <h2 class="section-title">Travel with Confidence</h2>
+  </div>
+  <div class="why-grid fade-up">
+    <div class="why-item">
+      <div class="why-icon">🛡️</div>
+      <div class="why-title">100% Safe Travel</div>
+      <div class="why-text">Verified hotels, licensed guides, and full insurance coverage on every trip.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">💰</div>
+      <div class="why-title">Best Price Guarantee</div>
+      <div class="why-text">We match any lower price you find. No hidden charges, transparent billing.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">📞</div>
+      <div class="why-title">24/7 Support</div>
+      <div class="why-text">Our travel experts are available around the clock for any help you need.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">Customized Itineraries</div>
+      <div class="why-text">Every tour is tailored to your preferences, budget, and travel style.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section">
+  <div class="section-header fade-up">
+    <span class="section-eyebrow">✦ Traveler Stories</span>
+    <h2 class="section-title">What Our Guests Say</h2>
+    <p class="section-subtitle">Real experiences from thousands of happy travelers across India.</p>
+  </div>
+  <div class="testimonials-wrap">
+    <div class="testimonials-grid fade-up">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The Rajasthan package was absolutely magical! Every detail was perfectly planned — from the camel safari to the royal dinner. BharatYatra made our trip truly unforgettable."</p>
+        <div class="testi-author">
+          <div class="testi-avatar av1">P</div>
+          <div>
+            <div class="testi-name">Priya Sharma</div>
+            <div class="testi-city">Delhi, India</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Booked the Kerala houseboat package for our anniversary. The backwaters, the Ayurveda massage, the food — everything was 10/10. Our guide Rajan was incredible!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar av2">A</div>
+          <div>
+            <div class="testi-name">Amit & Neha Verma</div>
+            <div class="testi-city">Mumbai, India</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★☆</div>
+        <p class="testi-text">"First time traveling to Ladakh and I was nervous. The team at BharatYatra handled everything — permits, altitude acclimatization, camping gear. Highly recommend!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar av3">R</div>
+          <div>
+            <div class="testi-name">Rohit Menon</div>
+            <div class="testi-city">Bangalore, India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="contact">
+  <h2>Get Exclusive Travel Deals 🎉</h2>
+  <p>Subscribe and receive special discounts, early access to new packages & travel tips.</p>
+  <div class="nl-form">
+    <input class="nl-input" type="email" placeholder="Enter your email address..." id="nl-email">
+    <button class="nl-btn" onclick="subscribe()">Subscribe Now</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Bharat<span>Yatra</span></div>
+      <p class="footer-tagline">India's most trusted travel company, creating unforgettable journeys since 2012. Explore the magic of Incredible India with us.</p>
+      <div class="footer-socials">
+        <div class="social-btn">📘</div>
+        <div class="social-btn">📸</div>
+        <div class="social-btn">🐦</div>
+        <div class="social-btn">▶️</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="#">Rajasthan</a></li>
+        <li><a href="#">Kerala</a></li>
+        <li><a href="#">Goa</a></li>
+        <li><a href="#">Himachal Pradesh</a></li>
+        <li><a href="#">Uttarakhand</a></li>
+        <li><a href="#">Ladakh</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">All Packages</a></li>
+        <li><a href="#">Honeymoon Tours</a></li>
+        <li><a href="#">Group Tours</a></li>
+        <li><a href="#">Pilgrim Tours</a></li>
+        <li><a href="#">Custom Tours</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><a href="tel:+918001234567">📞 +91 800-123-4567</a></li>
+        <li><a href="mailto:hello@bharatyatra.in">✉️ hello@bharatyatra.in</a></li>
+        <li><a href="#">📍 New Delhi, India</a></li>
+        <li><a href="#">⏰ Mon–Sat 9AM–7PM</a></li>
+        <li><a href="#">💬 WhatsApp Chat</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 BharatYatra. Made with 🧡 in India.</div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(13,31,34,0.98)';
+    } else {
+      nav.style.background = 'rgba(13,31,34,0.92)';
+    }
+  });
+
+  function scrollToPackages() {
+    document.getElementById('packages').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function scrollToDestinations() {
+    document.getElementById('destinations').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function showDest(name) {
+    showToast(`🗺️ Exploring ${name} packages...`);
+    setTimeout(() => scrollToPackages(), 500);
+  }
+
+  function bookPackage(name) {
+    showToast(`🎉 "${name}" added! Redirecting to booking...`);
+  }
+
+  function showAllPackages() {
+    showToast('📦 Loading all 50+ packages...');
+  }
+
+  function handleSearch() {
+    const dest = document.querySelector('.search-field input').value;
+    if (dest.trim()) {
+      showToast(`🔍 Searching tours for "${dest}"...`);
+    } else {
+      showToast('Please enter a destination to search!');
+    }
+  }
+
+  function subscribe() {
+    const email = document.getElementById('nl-email').value;
+    if (email && email.includes('@')) {
+      showToast('🎉 Subscribed! Check your inbox for exclusive deals.');
+      document.getElementById('nl-email').value = '';
+    } else {
+      showToast('Please enter a valid email address.');
+    }
+  }
+
+  function showToast(msg) {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = msg;
+    toast.style.cssText = `
+      position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: #0D1F22; color: #fff;
+      padding: 1rem 2rem; border-radius: 50px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.3);
+      font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 500;
+      border: 1px solid rgba(212,160,23,.3);
+      z-index: 9999; transition: all .4s ease; opacity: 0;
+    `;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+    });
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(20px)';
+      setTimeout(() => toast.remove(), 400);
+    }, 3000);
+  }
+</script>
+</body>
+</html>
