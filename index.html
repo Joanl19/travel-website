@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<title>Tripza | India — Curated Journeys</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<title>RUTT | Tour & Traveller — All Inclusions</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
   * {
@@ -14,36 +14,37 @@
   }
 
   :root {
-    --deep-charcoal: #1A1E24;
-    --warm-sand: #F9F5EB;
-    --terracotta: #C65D3B;
-    --gold-mist: #D4A373;
-    --sage: #7A8C6D;
-    --slate: #3E4A4B;
-    --border-light: rgba(0,0,0,0.06);
-    --shadow-sm: 0 12px 30px rgba(0,0,0,0.05);
-    --shadow-md: 0 20px 40px rgba(0,0,0,0.08);
+    --night: #0B1219;
+    --ash: #1E2A32;
+    --desert: #E9C891;
+    --clay: #C26A3E;
+    --mint: #6D9773;
+    --bone: #FCF7F0;
+    --glass-dark: rgba(11, 18, 25, 0.68);
   }
 
   body {
-    font-family: 'Inter', sans-serif;
-    background: var(--warm-sand);
-    color: var(--deep-charcoal);
-    line-height: 1.5;
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bone);
+    color: var(--night);
     overflow-x: hidden;
+    width: 100%;
   }
 
-  .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 24px;
+  html {
+    font-size: 16px;
   }
 
-  /* Typography */
-  h1, h2, h3, .serif {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #e2dcd2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--clay);
+    border-radius: 10px;
   }
 
   /* Navigation */
@@ -51,123 +52,115 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     z-index: 1000;
-    background: rgba(249, 245, 235, 0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-light);
-    padding: 1rem 0;
-    transition: all 0.3s;
+    background: rgba(11, 18, 25, 0.92);
+    backdrop-filter: blur(14px);
+    padding: 0.8rem 5%;
+    border-bottom: 1px solid rgba(233, 200, 145, 0.25);
   }
 
   .nav-flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    font-family: 'Cormorant Garamond', serif;
-  }
-
-  .logo span {
-    color: var(--terracotta);
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 400;
+    background: linear-gradient(125deg, #F5E7C8, #DDB67E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
   }
 
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: clamp(1rem, 3vw, 2rem);
     list-style: none;
+    align-items: center;
   }
 
   .nav-links a {
+    color: #F0E6D2;
     text-decoration: none;
-    color: var(--deep-charcoal);
+    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
     font-weight: 500;
-    font-size: 0.9rem;
+    transition: 0.2s;
+    white-space: nowrap;
   }
 
   .nav-links a:hover {
-    color: var(--terracotta);
-  }
-
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .nav-btn {
-    background: var(--deep-charcoal);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.6rem;
-    border-radius: 40px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .nav-btn:hover {
-    background: var(--terracotta);
-    transform: translateY(-2px);
+    color: var(--desert);
   }
 
   .menu-icon {
     display: none;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--desert);
     cursor: pointer;
-    color: var(--deep-charcoal);
+  }
+
+  .nav-btn {
+    background: transparent;
+    border: 1.2px solid var(--desert);
+    color: var(--desert);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   /* Hero Section */
   .hero {
-    padding-top: 100px;
-    min-height: 90vh;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364), url('https://images.unsplash.com/photo-1574616343659-f67de01e2681?fm=jpg&q=60&w=3000&auto=format') center/cover no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
     display: flex;
     align-items: center;
+    padding: 8rem 5% 4rem;
   }
 
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+  .hero-content {
+    max-width: min(100%, 700px);
   }
 
   .hero-badge {
+    font-size: clamp(0.6rem, 2vw, 0.75rem);
+    letter-spacing: 3px;
+    background: rgba(233,200,145,0.2);
     display: inline-block;
-    background: rgba(198, 93, 59, 0.1);
-    color: var(--terracotta);
     padding: 0.3rem 1rem;
-    border-radius: 40px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    border-radius: 60px;
+    color: var(--desert);
+    margin-bottom: 1rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 4.8rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    line-height: 1.15;
+    color: #FFFAF0;
+    margin-bottom: 1rem;
   }
 
   .hero h1 i {
-    color: var(--terracotta);
+    color: var(--desert);
     font-style: normal;
   }
 
   .hero-desc {
-    font-size: 1rem;
-    color: #5a5a5a;
-    line-height: 1.7;
+    color: rgba(255,245,225,0.85);
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    line-height: 1.5;
     margin-bottom: 2rem;
-    max-width: 90%;
   }
 
   .hero-buttons {
@@ -176,217 +169,78 @@
     flex-wrap: wrap;
   }
 
-  .btn-primary {
-    background: var(--terracotta);
-    color: white;
-    border: none;
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
+  .btn-primary, .btn-outline {
+    padding: 0.8rem 1.6rem;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
     cursor: pointer;
-    transition: all 0.3s;
+    border: none;
   }
 
-  .btn-primary:hover {
-    background: #b04e2e;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(198, 93, 59, 0.3);
+  .btn-primary {
+    background: var(--desert);
+    color: #0B1219;
   }
-
   .btn-outline {
     background: transparent;
-    border: 1.5px solid var(--deep-charcoal);
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
+    border: 1.5px solid var(--desert);
+    color: var(--desert);
   }
 
-  .btn-outline:hover {
-    background: var(--deep-charcoal);
-    color: white;
-  }
-
-  .hero-image {
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-
-  .stats {
-    display: flex;
-    gap: 2.5rem;
-    margin-top: 2.5rem;
-  }
-
-  .stat h3 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--terracotta);
-  }
-
-  .stat p {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #777;
-  }
-
-  /* Section Styles */
+  /* Sections */
   .section {
-    padding: 5rem 0;
-  }
-
-  .section-alt {
-    background: white;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .section-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--terracotta);
-    margin-bottom: 0.8rem;
+    padding: clamp(2.5rem, 8vw, 5rem) 5%;
   }
 
   .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    margin-bottom: 0.5rem;
   }
 
   .section-sub {
-    color: #6b6b6b;
-    max-width: 600px;
-    margin: 0 auto;
+    color: #5F6A6F;
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    margin-bottom: 2rem;
   }
 
-  /* Destination Cards */
-  .dest-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.8rem;
+  /* Destination Scroll */
+  .dest-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.2rem;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
   }
 
   .dest-card {
+    flex: 0 0 min(75%, 320px);
+    scroll-snap-align: start;
     background: white;
-    border-radius: 24px;
+    border-radius: 32px;
     overflow: hidden;
-    transition: all 0.4s;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
     cursor: pointer;
   }
 
-  .dest-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .dest-img {
-    height: 260px;
-    overflow: hidden;
-  }
-
-  .dest-img img {
+  .dest-card img {
     width: 100%;
-    height: 100%;
+    height: 220px;
     object-fit: cover;
-    transition: transform 0.5s;
-  }
-
-  .dest-card:hover .dest-img img {
-    transform: scale(1.05);
   }
 
   .dest-info {
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
 
   .dest-name {
-    font-size: 1.4rem;
     font-weight: 700;
-    font-family: 'Cormorant Garamond', serif;
-    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
   }
 
-  .dest-location {
-    font-size: 0.8rem;
-    color: var(--terracotta);
-    margin-bottom: 0.5rem;
-  }
-
-  .dest-price {
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-
-  /* Experience Cards */
-  .exp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.8rem;
-  }
-
-  .exp-card {
-    background: white;
-    padding: 2rem 1.5rem;
-    border-radius: 20px;
-    text-align: center;
-    transition: all 0.3s;
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .exp-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .exp-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .exp-card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .exp-card p {
-    font-size: 0.85rem;
-    color: #6b6b6b;
-    line-height: 1.5;
-  }
-
-  .exp-img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s;
-  }
-
-  .exp-card:hover .exp-img {
-    transform: scale(1.05);
-  }
-
-  /* Package Cards */
+  /* Package Grid */
   .pkg-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -395,82 +249,141 @@
 
   .pkg-card {
     background: white;
-    border-radius: 24px;
+    border-radius: 32px;
     overflow: hidden;
-    transition: all 0.4s;
-    box-shadow: var(--shadow-sm);
+    transition: 0.3s ease;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
   }
 
   .pkg-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+    box-shadow: 0 24px 40px rgba(0, 0, 0, 0.12);
   }
 
   .pkg-img {
     height: 220px;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
   }
 
   .pkg-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s;
+  }
+
+  .pkg-card:hover .pkg-img img {
+    transform: scale(1.05);
   }
 
   .pkg-badge {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: var(--terracotta);
+    top: 12px;
+    left: 12px;
+    background: var(--clay);
     color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 30px;
     font-size: 0.7rem;
-    font-weight: 700;
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    font-weight: 600;
+    z-index: 2;
   }
 
   .pkg-days {
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    background: rgba(0,0,0,0.6);
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(4px);
-    color: white;
+    color: var(--desert);
     padding: 0.3rem 0.8rem;
-    border-radius: 20px;
+    border-radius: 30px;
     font-size: 0.7rem;
+    font-weight: 600;
   }
 
   .pkg-info {
     padding: 1.5rem;
+    flex: 1;
   }
 
   .pkg-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    font-family: 'Cormorant Garamond', serif;
+    font-weight: 800;
+    font-size: 1.4rem;
     margin-bottom: 0.3rem;
   }
 
   .pkg-loc {
-    font-size: 0.8rem;
-    color: var(--terracotta);
-    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--clay);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
-  .pkg-features {
+  /* ========== INCLUSIONS SECTION WITH ICONS (Hotel, Sightseeing, Transfer, Meal) ========== */
+  .inclusions {
+    background: #F8F6F0;
+    border-radius: 24px;
+    padding: 1rem 1rem;
+    margin: 1rem 0;
+  }
+
+  .inclusions-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clay);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .inclusions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .inc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #2c3e2f;
+    background: white;
+    padding: 0.5rem 0.7rem;
+    border-radius: 60px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .inc-item i {
+    width: 22px;
+    font-size: 1rem;
+  }
+
+  /* Specific icon colors */
+  .inc-item .fa-hotel { color: #C26A3E; }
+  .inc-item .fa-umbrella-beach { color: #2c7da0; }
+  .inc-item .fa-car { color: #6D9773; }
+  .inc-item .fa-utensils { color: #d4a373; }
+
+  .exclusions-note {
+    margin-top: 0.8rem;
+    font-size: 0.65rem;
+    color: #999;
+    border-top: 1px solid #e0dbcf;
+    padding-top: 0.6rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .pkg-feature {
-    font-size: 0.7rem;
-    background: #f0f0f0;
-    padding: 0.2rem 0.7rem;
-    border-radius: 20px;
+    gap: 0.8rem;
   }
 
   .pkg-footer {
@@ -478,372 +391,208 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
   }
 
   .pkg-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--terracotta);
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--night);
   }
 
   .pkg-price small {
     font-size: 0.7rem;
     font-weight: 400;
-    color: #888;
+    color: #777;
   }
 
   .book-btn {
-    background: var(--deep-charcoal);
+    background: var(--night);
     color: white;
     border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 30px;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.2s;
   }
 
   .book-btn:hover {
-    background: var(--terracotta);
+    background: var(--clay);
+  }
+
+  /* Carousel */
+  .carousel-section {
+    background: var(--ash);
+    color: white;
+    padding: 2rem 0;
+  }
+
+  .carousel-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    gap: 1rem;
+    padding: 0 5%;
+  }
+
+  .carousel-item {
+    flex: 0 0 min(85%, 380px);
+    scroll-snap-align: start;
+    border-radius: 28px;
+    overflow: hidden;
+    height: 280px;
+    position: relative;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carousel-caption {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, #000, transparent);
+    width: 100%;
+    padding: 1rem;
+    font-weight: bold;
   }
 
   /* Testimonials */
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
   .testi-card {
     background: white;
-    padding: 2rem;
-    border-radius: 24px;
-    box-shadow: var(--shadow-sm);
+    border-radius: 28px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
   }
 
   .stars {
-    color: #f5a623;
-    margin-bottom: 1rem;
-  }
-
-  .testi-text {
-    font-style: italic;
-    color: #4a4a4a;
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
-  }
-
-  .testi-author {
-    font-weight: 700;
-  }
-
-  .testi-loc {
-    font-size: 0.7rem;
-    color: var(--terracotta);
+    color: #E9C891;
+    margin-bottom: 8px;
   }
 
   /* CTA */
-  .cta {
-    background: linear-gradient(135deg, var(--deep-charcoal), #2a2e35);
-    color: white;
+  .cta-mobile {
+    background: var(--night);
+    margin: 1rem 5%;
+    border-radius: 48px;
+    padding: 2rem 1.5rem;
     text-align: center;
-    padding: 4rem 2rem;
-    border-radius: 30px;
-    margin: 2rem auto;
-  }
-
-  .cta h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: 1rem;
-  }
-
-  .cta p {
-    opacity: 0.8;
-    margin-bottom: 2rem;
-  }
-
-  .cta .btn-primary {
-    background: var(--terracotta);
+    color: white;
   }
 
   /* Footer */
-  footer {
-    background: var(--deep-charcoal);
-    color: rgba(255,255,255,0.6);
-    padding: 3rem 0 2rem;
-    margin-top: 3rem;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .footer-col h4 {
-    color: white;
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .footer-col ul {
-    list-style: none;
-  }
-
-  .footer-col ul li {
-    margin-bottom: 0.6rem;
-  }
-
-  .footer-col ul li a {
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s;
-    cursor: pointer;
-  }
-
-  .footer-col ul li a:hover {
-    color: var(--terracotta);
-  }
-
-  .footer-bottom {
+  .footer {
+    background: #0F1419;
+    color: #aaa;
+    padding: 2rem 5%;
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.75rem;
   }
 
-  /* MODAL STYLES */
+  /* Modal */
   .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
     z-index: 2000;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px);
+    padding: 1rem;
   }
 
   .modal-content {
-    background: white;
+    background: #1B242C;
     max-width: 500px;
     width: 90%;
-    border-radius: 30px;
-    padding: 2rem;
-    position: relative;
-    animation: modalFadeIn 0.3s ease;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-
-  @keyframes modalFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    border-radius: 40px;
+    padding: 1.8rem;
+    color: white;
   }
 
   .close-modal {
-    position: absolute;
-    right: 1.5rem;
-    top: 1rem;
+    float: right;
     font-size: 1.8rem;
     cursor: pointer;
-    color: #999;
-    transition: color 0.3s;
+    color: var(--desert);
   }
 
-  .close-modal:hover {
-    color: var(--terracotta);
-  }
-
-  .modal h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: var(--deep-charcoal);
-  }
-
-  .modal-sub {
-    color: #777;
-    font-size: 0.85rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 1rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.2rem;
-  }
-
-  .form-group label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    color: var(--deep-charcoal);
-  }
-
-  .form-group input, 
-  .form-group select, 
-  .form-group textarea {
+  .form-group input, .form-group select {
     width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    transition: border-color 0.3s;
-  }
-
-  .form-group input:focus, 
-  .form-group select:focus, 
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--terracotta);
-  }
-
-  .form-group textarea {
-    resize: vertical;
-    min-height: 80px;
+    padding: 0.8rem;
+    margin: 8px 0;
+    background: #2D3A40;
+    border: none;
+    border-radius: 28px;
+    color: white;
   }
 
   .submit-btn {
-    background: var(--terracotta);
-    color: white;
-    border: none;
+    background: var(--desert);
     width: 100%;
-    padding: 1rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
+    padding: 0.9rem;
+    border-radius: 40px;
+    font-weight: bold;
+    margin-top: 12px;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 0.5rem;
   }
 
-  .submit-btn:hover {
-    background: #b04e2e;
-    transform: translateY(-2px);
-  }
-
-  /* Animations */
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Mobile Responsive */
+  /* Responsive */
   @media (max-width: 768px) {
-    .container {
-      padding: 0 20px;
-    }
-
     .menu-icon {
       display: block;
     }
-
     .nav-links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--warm-sand);
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      width: 75%;
+      height: calc(100vh - 70px);
+      background: rgba(15, 22, 28, 0.98);
+      backdrop-filter: blur(24px);
       flex-direction: column;
-      padding: 1.5rem;
-      gap: 1rem;
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: var(--shadow-sm);
+      padding: 2rem;
+      gap: 1.8rem;
+      transition: 0.3s ease;
+      z-index: 999;
+      border-right: 1px solid var(--desert);
+      align-items: flex-start;
     }
-
     .nav-links.show {
-      display: flex;
+      left: 0;
     }
-
-    .hero-grid {
+    .nav-links a {
+      font-size: 1.2rem;
+      white-space: normal;
+    }
+    .inclusions-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
     }
-
-    .hero-desc {
-      max-width: 100%;
+    .pkg-footer {
+      flex-direction: column;
+      align-items: stretch;
     }
-
-    .hero {
-      padding-top: 80px;
-    }
-
-    .stats {
-      justify-content: center;
-    }
-
-    .section {
-      padding: 3rem 0;
-    }
-
-    .dest-grid, .exp-grid, .pkg-grid, .testi-grid {
-      gap: 1.2rem;
-    }
-
-    .cta {
-      margin: 1rem;
-      padding: 2.5rem 1.5rem;
-    }
-
-    .footer-grid {
-      gap: 1.5rem;
+    .book-btn {
+      text-align: center;
     }
   }
 
-  @media (max-width: 480px) {
-    .hero-buttons {
-      flex-direction: column;
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .pkg-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
-    
-    .btn-primary, .btn-outline {
-      text-align: center;
-    }
+  }
 
-    .stats {
-      gap: 1.5rem;
-    }
-
-    .stat h3 {
-      font-size: 1.4rem;
-    }
-
-    .pkg-footer {
-      flex-direction: column;
-      gap: 0.8rem;
-      align-items: flex-start;
+  @media (min-width: 1025px) {
+    .pkg-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
@@ -851,306 +600,227 @@
 <body>
 
 <nav class="navbar">
-  <div class="container nav-flex">
-    <div class="logo">Tripza<span>.</span></div>
+  <div class="nav-flex">
+    <div class="logo">RUTT</div>
+    <div class="menu-icon" id="menuToggle"><i class="fas fa-hiking"></i></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#destinations">Destinations</a></li>
-      <li><a href="#experiences">Experiences</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#destinations">DISCOVER</a></li>
+      <li><a href="#packages">PACKAGES</a></li>
+      <li><a href="#stories">STORIES</a></li>
+      <li><a href="#" onclick="openEnquiryModal('General')">CONTACT</a></li>
     </ul>
-    <div class="nav-right">
-      <button class="nav-btn" onclick="openBookingForm('General Enquiry')">Enquire Now</button>
-      <div class="menu-icon" id="menuToggle">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
   </div>
 </nav>
 
 <!-- Hero Section -->
 <section class="hero" id="home">
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <span class="hero-badge">✦ BESPOKE TRAVEL ATELIER</span>
-      <h1>Discover India's<br><i>Hidden Soul</i></h1>
-      <p class="hero-desc">Privately guided journeys through India's most authentic corners — from royal Rajasthan to the serene backwaters of Kerala. Every detail, crafted for you.</p>
-      <div class="hero-buttons">
-        <button class="btn-primary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">Explore Journeys</button>
-        <button class="btn-outline" onclick="openBookingForm('Expert Consultation')">Talk to Expert</button>
-      </div>
-      <div class="stats">
-        <div class="stat"><h3>28+</h3><p>States</p></div>
-        <div class="stat"><h3>1.2k+</h3><p>Journeys</p></div>
-        <div class="stat"><h3>4.95★</h3><p>Rating</p></div>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80" alt="India luxury travel" loading="lazy">
+  <div class="hero-content">
+    <span class="hero-badge">✦ WANDER OF INDIA ✦</span>
+    <h1>Untamed <i>soul</i>,<br>sacred roads</h1>
+    <p class="hero-desc">Barefoot luxury & raw adventures — from Himalayan whispers to tropical shores.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">Start Journey</button>
+      <button class="btn-outline" onclick="openEnquiryModal('Curated Call')">Call Nomad</button>
     </div>
   </div>
 </section>
 
-<!-- Destinations Section -->
-<section class="section" id="destinations">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-tag">━━ WHERE TO GO</span>
-      <h2 class="section-title">Iconic Destinations</h2>
-      <p class="section-sub">From desert forts to tropical shores — India's magic awaits</p>
+<!-- Destinations -->
+<section id="destinations" class="section">
+  <h2 class="section-title">Roam wild</h2>
+  <div class="section-sub">Swipe to explore → hidden valleys & coastal secrets</div>
+  <div class="dest-scroll">
+    <div class="dest-card" onclick="openEnquiryModal('Spiti Valley')"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&auto=format" loading="lazy"><div class="dest-info"><div class="dest-name">Spiti Valley</div><div class="dest-price">From ₹14,999</div></div></div>
+    <div class="dest-card" onclick="openEnquiryModal('Meghalaya')"><img src="https://images.unsplash.com/photo-1593813738953-fb3c93e0769d?w=600&auto=format" loading="lazy"><div class="dest-info"><div class="dest-name">Meghalaya</div><div class="dest-price">From ₹12,499</div></div></div>
+    <div class="dest-card" onclick="openEnquiryModal('Gokarna')"><img src="https://images.unsplash.com/photo-1693205118032-9382f7267f55?w=600&auto=format" loading="lazy"><div class="dest-info"><div class="dest-name">Gokarna</div><div class="dest-price">From ₹8,999</div></div></div>
+    <div class="dest-card" onclick="openEnquiryModal('Rann of Kutch')"><img src="https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?w=600&auto=format" loading="lazy"><div class="dest-info"><div class="dest-name">Rann of Kutch</div><div class="dest-price">From ₹11,999</div></div></div>
+  </div>
+</section>
+
+<!-- Packages with FULL INCLUSIONS (Hotel, Sightseeing, Transfer, Meal icons) -->
+<section id="packages" class="section">
+  <h2 class="section-title">Soulful packages</h2>
+  <div class="section-sub">✨ All packages include Hotel • Sightseeing • Transfers • Meals</div>
+  <div class="pkg-grid">
+    
+    <!-- Package 1: Ladakh -->
+    <div class="pkg-card">
+      <div class="pkg-img">
+        <img src="https://images.unsplash.com/photo-1593118845043-359e5f628214?w=600&auto=format" alt="Ladakh">
+        <span class="pkg-badge">⛰️ epic</span>
+        <span class="pkg-days">6D | Nubra • Pangong</span>
+      </div>
+      <div class="pkg-info">
+        <div class="pkg-title">Ladakh Raw Expedition</div>
+        <div class="pkg-loc"><i class="fas fa-map-marker-alt"></i> Leh • Nubra • Pangong</div>
+        
+        <!-- INCLUSIONS with 4 main icons: Hotel, Sightseeing, Transfer, Meal -->
+        <div class="inclusions">
+          <div class="inclusions-title"><i class="fas fa-gift"></i> Package Inclusions</div>
+          <div class="inclusions-grid">
+            <div class="inc-item"><i class="fas fa-hotel"></i> Hotel • 4★ stays + camps</div>
+            <div class="inc-item"><i class="fas fa-umbrella-beach"></i> Sightseeing • All entry fees</div>
+            <div class="inc-item"><i class="fas fa-car"></i> Transfer • SUV + airport pickup</div>
+            <div class="inc-item"><i class="fas fa-utensils"></i> Meal • Breakfast + Dinner</div>
+          </div>
+          <div class="exclusions-note">
+            <span><i class="fas fa-plane"></i> Flights extra</span>
+            <span><i class="fas fa-wine-bottle"></i> Personal expenses</span>
+          </div>
+        </div>
+        
+        <div class="pkg-footer">
+          <div class="pkg-price">₹24,999 <small>/ person</small></div>
+          <button class="book-btn" onclick="event.stopPropagation(); openEnquiryModal('Ladakh Raw Expedition (6D)')">Book Now →</button>
+        </div>
+      </div>
     </div>
-    <div class="dest-grid fade-up">
-      <div class="dest-card" onclick="openBookingForm('Rajasthan - Royal Heritage')">
-        <div class="dest-img"><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Rajasthan" loading="lazy"></div>
-        <div class="dest-info"><div class="dest-name">Rajasthan</div><div class="dest-location">Royal Heritage</div><div class="dest-price">From ₹22,999</div></div>
+
+    <!-- Package 2: Rajasthan -->
+    <div class="pkg-card">
+      <div class="pkg-img">
+        <img src="https://images.unsplash.com/photo-1709620220232-12ecd7ca33a8?w=600&auto=format" alt="Rajasthan">
+        <span class="pkg-badge">🏜️ royal</span>
+        <span class="pkg-days">5D | Jaisalmer • Bikaner</span>
       </div>
-      <div class="dest-card" onclick="openBookingForm('Kerala - Backwaters')">
-        <div class="dest-img"><img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600&q=80" alt="Kerala" loading="lazy"></div>
-        <div class="dest-info"><div class="dest-name">Kerala</div><div class="dest-location">Backwaters & Ayurveda</div><div class="dest-price">From ₹18,499</div></div>
+      <div class="pkg-info">
+        <div class="pkg-title">Desert Caravan</div>
+        <div class="pkg-loc"><i class="fas fa-map-marker-alt"></i> Jaisalmer • Sam Dunes</div>
+        
+        <div class="inclusions">
+          <div class="inclusions-title"><i class="fas fa-gift"></i> Package Inclusions</div>
+          <div class="inclusions-grid">
+            <div class="inc-item"><i class="fas fa-hotel"></i> Hotel • Heritage haveli + camp</div>
+            <div class="inc-item"><i class="fas fa-umbrella-beach"></i> Sightseeing • Forts & camel safari</div>
+            <div class="inc-item"><i class="fas fa-car"></i> Transfer • AC car + jeep</div>
+            <div class="inc-item"><i class="fas fa-utensils"></i> Meal • Breakfast + royal dinner</div>
+          </div>
+          <div class="exclusions-note">
+            <span><i class="fas fa-train"></i> Train/flight extra</span>
+            <span><i class="fas fa-shopping-bag"></i> Souvenirs</span>
+          </div>
+        </div>
+        
+        <div class="pkg-footer">
+          <div class="pkg-price">₹18,499 <small>/ person</small></div>
+          <button class="book-btn" onclick="event.stopPropagation(); openEnquiryModal('Desert Caravan Rajasthan (5D)')">Book Now →</button>
+        </div>
       </div>
-      <div class="dest-card" onclick="openBookingForm('Ladakh - Mountain Adventure')">
-        <div class="dest-img"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Ladakh" loading="lazy"></div>
-        <div class="dest-info"><div class="dest-name">Ladakh</div><div class="dest-location">Mountain Adventure</div><div class="dest-price">From ₹29,999</div></div>
+    </div>
+
+    <!-- Package 3: Kerala Backwaters -->
+    <div class="pkg-card">
+      <div class="pkg-img">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format" alt="Kerala">
+        <span class="pkg-badge">🌿 serene</span>
+        <span class="pkg-days">4D | Alleppey • Houseboat</span>
       </div>
-      <div class="dest-card" onclick="openBookingForm('Goa - Beaches')">
-        <div class="dest-img"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="Goa" loading="lazy"></div>
-        <div class="dest-info"><div class="dest-name">Goa</div><div class="dest-location">Sun & Beaches</div><div class="dest-price">From ₹12,999</div></div>
+      <div class="pkg-info">
+        <div class="pkg-title">Backwater Nomad</div>
+        <div class="pkg-loc"><i class="fas fa-map-marker-alt"></i> Alleppey • Kumarakom</div>
+        
+        <div class="inclusions">
+          <div class="inclusions-title"><i class="fas fa-gift"></i> Package Inclusions</div>
+          <div class="inclusions-grid">
+            <div class="inc-item"><i class="fas fa-hotel"></i> Hotel • Resort + houseboat</div>
+            <div class="inc-item"><i class="fas fa-umbrella-beach"></i> Sightseeing • Village canoe + temple</div>
+            <div class="inc-item"><i class="fas fa-car"></i> Transfer • Airport + private cab</div>
+            <div class="inc-item"><i class="fas fa-utensils"></i> Meal • All meals (veg/local)</div>
+          </div>
+          <div class="exclusions-note">
+            <span><i class="fas fa-plane"></i> Airfare extra</span>
+            <span><i class="fas fa-wine-glass-alt"></i> Alcohol not included</span>
+          </div>
+        </div>
+        
+        <div class="pkg-footer">
+          <div class="pkg-price">₹15,999 <small>/ person</small></div>
+          <button class="book-btn" onclick="event.stopPropagation(); openEnquiryModal('Backwater Nomad Kerala (4D)')">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Experiences Section -->
-<section class="section section-alt" id="experiences">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-tag">━━ CURATED EXPERIENCES</span>
-      <h2 class="section-title">Travel Your Way</h2>
-      <p class="section-sub">Experiences that speak to your soul</p>
-    </div>
-    <div class="exp-grid fade-up">
-      <div class="exp-card" onclick="openBookingForm('Spiritual Trails')">
-        <img src="https://plus.unsplash.com/premium_photo-1697730447144-a2f7257e4a1f?fm=jpg&q=60&w=3000&auto=format&fit=crop" class="exp-img">
-        <h4>Spiritual Trails</h4>
-        <p>Varanasi, Rishikesh, Amritsar — sacred journeys</p>
-      </div>
-      <div class="exp-card" onclick="openBookingForm('Culinary Escapes')">
-        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?fm=jpg&q=60&w=3000&auto=format&fit=crop" class="exp-img">
-        <h4>Culinary Escapes</h4>
-        <p>Street food, royal thalis, spice markets</p>
-      </div>
-      <div class="exp-card" onclick="openBookingForm('Wildlife Safaris')">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTad4NWESloVeOOrE2hisFmVBqIvzCaFMhrsw&s" class="exp-img">
-        <h4>Wildlife Safaris</h4>
-        <p>Tigers, elephants, rhinos in national parks</p>
-      </div>
-      <div class="exp-card" onclick="openBookingForm('Wellness Retreats')">
-        <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?fm=jpg&q=60&w=3000&auto=format&fit=crop" class="exp-img">
-        <h4>Wellness Retreats</h4>
-        <p>Ayurveda, yoga, meditation escapes</p>
-      </div>
-    </div>
+<!-- Image Carousel -->
+<section class="carousel-section">
+  <div style="padding: 0 5% 1rem;"><h3 style="font-family: 'DM Serif Display';">✨ visual diaries</h3><p style="opacity:0.7;">scroll to feel the rhythm</p></div>
+  <div class="carousel-container">
+    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1558184525-2218e8c34914?w=600&auto=format" loading="lazy"><div class="carousel-caption">Varanasi Ghats</div></div>
+    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&auto=format" loading="lazy"><div class="carousel-caption">Taj Mahal</div></div>
+    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1596018382916-56d2e341d784?w=600&auto=format" loading="lazy"><div class="carousel-caption">Hampi ruins</div></div>
+    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1531252582519-2d7e6795be96?w=600&auto=format" loading="lazy"><div class="carousel-caption">Ziro Valley</div></div>
+    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1586053226626-febc8817962f?w=600&auto=format" loading="lazy"><div class="carousel-caption">Andaman shores</div></div>
   </div>
 </section>
 
-<!-- Packages Section -->
-<section class="section" id="packages">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-tag">━━ SIGNATURE JOURNEYS</span>
-      <h2 class="section-title">Handpicked Packages</h2>
-      <p class="section-sub">All-inclusive itineraries designed for unforgettable memories</p>
-    </div>
-    <div class="pkg-grid fade-up">
-      <div class="pkg-card">
-        <div class="pkg-img"><img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Rajasthan" loading="lazy"><span class="pkg-badge">⭐ Bestseller</span><span class="pkg-days">7 Days</span></div>
-        <div class="pkg-info"><div class="pkg-title">Royal Rajasthan</div><div class="pkg-loc">Jaipur · Jodhpur · Udaipur</div><div class="pkg-features"><span class="pkg-feature">🏨 Palace Hotels</span><span class="pkg-feature">🐪 Camel Safari</span><span class="pkg-feature">🎭 Folk Show</span></div><div class="pkg-footer"><div class="pkg-price">₹24,999 <small>/person</small></div><button class="book-btn" onclick="event.stopPropagation(); openBookingForm('Royal Rajasthan Package')">Book Now</button></div></div>
-      </div>
-      <div class="pkg-card">
-        <div class="pkg-img"><img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Kerala" loading="lazy"><span class="pkg-badge">🌿 Popular</span><span class="pkg-days">5 Days</span></div>
-        <div class="pkg-info"><div class="pkg-title">Kerala Serenity</div><div class="pkg-loc">Munnar · Alleppey · Kovalam</div><div class="pkg-features"><span class="pkg-feature">🛶 Houseboat</span><span class="pkg-feature">🧖 Ayurveda</span><span class="pkg-feature">🍛 Seafood</span></div><div class="pkg-footer"><div class="pkg-price">₹18,999 <small>/person</small></div><button class="book-btn" onclick="event.stopPropagation(); openBookingForm('Kerala Serenity Package')">Book Now</button></div></div>
-      </div>
-      <div class="pkg-card">
-        <div class="pkg-img"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Ladakh" loading="lazy"><span class="pkg-badge">🏔️ Adventure</span><span class="pkg-days">8 Days</span></div>
-        <div class="pkg-info"><div class="pkg-title">Ladakh Odyssey</div><div class="pkg-loc">Leh · Pangong · Nubra</div><div class="pkg-features"><span class="pkg-feature">🏕️ Camping</span><span class="pkg-feature">🏍️ Bike Ride</span><span class="pkg-feature">🌄 Pangong</span></div><div class="pkg-footer"><div class="pkg-price">₹31,999 <small>/person</small></div><button class="book-btn" onclick="event.stopPropagation(); openBookingForm('Ladakh Odyssey Package')">Book Now</button></div></div>
-      </div>
-    </div>
-  </div>
+<!-- Testimonials -->
+<section id="stories" class="section">
+  <h2 class="section-title">Traveller murmurs</h2>
+  <div class="testi-card"><div class="stars">★★★★★</div><p>"The RUTT team crafted the most authentic trip to Spiti. Everything felt like poetry."</p><strong>— Arjun Nair</strong></div>
+  <div class="testi-card"><div class="stars">★★★★★</div><p>"From desert camping to local chai stops — pure magic. Highly recommended!"</p><strong>— Sanjana & Rohit</strong></div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-tag">━━ TRAVELER STORIES</span>
-      <h2 class="section-title">What Our Guests Say</h2>
-      <p class="section-sub">Real experiences from happy travelers across India</p>
-    </div>
-    <div class="testi-grid fade-up">
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"The Rajasthan tour was magical! Every detail was perfectly planned. The camel safari and palace dinner were unforgettable."</p><div class="testi-author">— Priya Sharma</div><div class="testi-loc">Delhi</div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"Kerala houseboat experience exceeded our expectations. The team took care of everything. Will definitely book again!"</p><div class="testi-author">— Amit & Neha</div><div class="testi-loc">Mumbai</div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"Ladakh was a dream come true. Our guide was knowledgeable and the arrangements were flawless. Highly recommend!"</p><div class="testi-author">— Rohan Mehta</div><div class="testi-loc">Bangalore</div></div>
-    </div>
-  </div>
-</section>
+<!-- CTA -->
+<div class="cta-mobile">
+  <i class="fas fa-map-marked-alt" style="font-size: 2rem; color: var(--desert);"></i>
+  <h3 style="margin: 0.5rem 0;">Ready to roam free?</h3>
+  <button class="btn-primary" style="margin-top: 0.8rem;" onclick="openEnquiryModal('Free Spirit')">Plan my escape →</button>
+</div>
 
-<!-- CTA Section -->
-<section class="container">
-  <div class="cta fade-up">
-    <h2>Your India Story Begins Here</h2>
-    <p>Talk to our travel architects — no obligations, just inspiration.</p>
-    <button class="btn-primary" onclick="openBookingForm('Start Planning')">Start Planning →</button>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer id="contact">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col"><h4>Tripza</h4><p style="font-size:0.85rem; opacity:0.6;">India's finest travel curators, crafting extraordinary journeys since 2012.</p></div>
-      <div class="footer-col"><h4>Destinations</h4><ul><li><a onclick="openBookingForm('Rajasthan tours'); return false;">Rajasthan</a></li><li><a onclick="openBookingForm('Kerala tours'); return false;">Kerala</a></li><li><a onclick="openBookingForm('Ladakh tours'); return false;">Ladakh</a></li><li><a onclick="openBookingForm('Goa tours'); return false;">Goa</a></li></ul></div>
-      <div class="footer-col"><h4>Support</h4><ul><li><a onclick="openBookingForm('Contact Support'); return false;">Contact Us</a></li><li><a onclick="openBookingForm('FAQ'); return false;">FAQs</a></li><li><a onclick="openBookingForm('Cancellation Policy'); return false;">Cancellation</a></li><li><a onclick="openBookingForm('Terms'); return false;">Terms</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a onclick="openBookingForm('Call Enquiry'); return false;">📞 +91 11 4000 8000</a></li><li><a onclick="openBookingForm('Email Enquiry'); return false;">✉️ hello@Tripza.travel</a></li><li><a onclick="openBookingForm('Instagram'); return false;">📸 @Tripza.travel</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 Tripza — Discover India's Soul</span></div>
-  </div>
+<footer class="footer">
+  <p>📞 +91 98765 11223 &nbsp;|&nbsp; ✉️ wander@rutt.travel</p>
+  <p style="margin-top: 0.6rem;">© 2026 RUTT — slow travel, deep connections</p>
 </footer>
 
-<!-- Booking Modal -->
-<div id="bookingModal" class="modal">
+<!-- Modal -->
+<div id="enquiryModal" class="modal">
   <div class="modal-content">
-    <span class="close-modal">&times;</span>
-    <h3>Plan Your Journey</h3>
-    <div class="modal-sub" id="modalPackageInfo">Fill the details below and our travel curator will reach out within 2 hours</div>
-    
-    <form id="bookingForm" onsubmit="submitBookingForm(event)">
-      <div class="form-group">
-        <label>Full Name *</label>
-        <input type="text" id="fullName" required placeholder="Enter your full name">
-      </div>
-      <div class="form-group">
-        <label>Email Address *</label>
-        <input type="email" id="email" required placeholder="you@example.com">
-      </div>
-      <div class="form-group">
-        <label>Phone Number *</label>
-        <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX">
-      </div>
-      <div class="form-group">
-        <label>Travel Date (Preferred)</label>
-        <input type="date" id="travelDate">
-      </div>
-      <div class="form-group">
-        <label>Number of Travelers</label>
-        <select id="travelers">
-          <option value="1">1 Traveler</option>
-          <option value="2" selected>2 Travelers</option>
-          <option value="3">3 Travelers</option>
-          <option value="4">4 Travelers</option>
-          <option value="5">5+ Travelers</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Additional Message / Special Requests</label>
-        <textarea id="message" placeholder="Tell us about your dream journey, preferences, or any special requests..."></textarea>
-      </div>
-      <input type="hidden" id="packageName" value="">
-      <button type="submit" class="submit-btn">✈️ Send Enquiry</button>
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <h3 style="font-family: 'DM Serif Display';">Start your odyssey</h3>
+    <div id="modalInfo" style="margin: 0.5rem 0 1rem; font-size: 0.8rem;">All packages include Hotel, Sightseeing, Transfers & Meals.</div>
+    <form id="modalForm">
+      <div class="form-group"><input type="text" id="modalName" placeholder="Full name *" required></div>
+      <div class="form-group"><input type="email" id="modalEmail" placeholder="Email *" required></div>
+      <div class="form-group"><input type="tel" id="modalPhone" placeholder="WhatsApp / Phone"></div>
+      <div class="form-group"><select id="modalTravelers"><option>1 traveler</option><option selected>2 travelers</option><option>3-4 travelers</option><option>5+ travelers</option></select></div>
+      <input type="hidden" id="modalPackage">
+      <button type="submit" class="submit-btn">Send Enquiry →</button>
     </form>
-    <p style="font-size: 0.7rem; color: #999; text-align: center; margin-top: 1rem;">We respect your privacy. No spam, ever.</p>
   </div>
 </div>
 
 <script>
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-  
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
+  const menuBtn = document.getElementById('menuToggle');
+  const nav = document.getElementById('navLinks');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => nav.classList.toggle('show'));
+  }
+  document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) nav.classList.remove('show');
+  }));
 
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('show');
-    });
-  });
-
-  // Scroll reveal animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Modal Functions
-  const modal = document.getElementById('bookingModal');
-  const modalPackageInfo = document.getElementById('modalPackageInfo');
-  const packageNameInput = document.getElementById('packageName');
-
-  function openBookingForm(packageTitle) {
-    packageNameInput.value = packageTitle;
-    modalPackageInfo.innerHTML = `You're inquiring about: <strong style="color: #C65D3B;">${packageTitle}</strong><br>Fill the details below and our travel curator will reach out within 2 hours.`;
+  const modal = document.getElementById('enquiryModal');
+  function openEnquiryModal(pkg) {
+    document.getElementById('modalPackage').value = pkg;
+    document.getElementById('modalInfo').innerHTML = `✨ You're interested in: <strong>${pkg}</strong><br>✅ Hotel • Sightseeing • Transfer • Meals included. Our travel expert will reply within 2 hours.`;
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
-
-  function closeModal() {
+  window.closeModal = function() {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
-  }
+  };
+  window.onclick = (e) => { if(e.target === modal) closeModal(); };
 
-  document.querySelector('.close-modal').addEventListener('click', closeModal);
-  
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Form submission
-  function submitBookingForm(event) {
-    event.preventDefault();
-    
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const travelDate = document.getElementById('travelDate').value;
-    const travelers = document.getElementById('travelers').value;
-    const message = document.getElementById('message').value;
-    const packageName = document.getElementById('packageName').value;
-    
-    // Simple validation
-    if (!fullName || !email || !phone) {
-      alert('Please fill in all required fields (*)');
-      return;
-    }
-    
-    // Show success message
-    alert(`✨ Thank you ${fullName}!\n\nYour enquiry for "${packageName}" has been received.\n\nOur travel curator will contact you at ${email} or ${phone} within 2 hours.\n\nTravel Date: ${travelDate || 'Flexible'}\nTravelers: ${travelers}\n\nWe look forward to crafting your perfect India journey!`);
-    
-    // Reset form and close modal
-    document.getElementById('bookingForm').reset();
+  document.getElementById('modalForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('modalName').value.trim();
+    if(!name) { alert("Please enter your name"); return; }
+    alert(`🌄 ${name}, your enquiry received! Our team will share the detailed itinerary with all inclusions (Hotel, Sightseeing, Transfer, Meals).`);
     closeModal();
-    
-    // Optional: You can add actual form submission to a backend here
-  }
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        navLinks.classList.remove('show');
-      }
-    });
+    document.getElementById('modalForm').reset();
   });
 </script>
 </body>
