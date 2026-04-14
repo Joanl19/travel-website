@@ -368,6 +368,20 @@
     color: #6b6b6b;
     line-height: 1.5;
   }
+  .exp-card:hover .exp-img {
+  transform: scale(1.05);
+}
+
+.exp-img {
+  transition: 0.3s;
+}
+.exp-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
 
   /* Package Cards */
   .pkg-grid {
@@ -788,11 +802,32 @@
       <p class="section-sub">Experiences that speak to your soul</p>
     </div>
     <div class="exp-grid fade-up">
-      <div class="exp-card" onclick="showToast('Spiritual journeys available')"><div class="exp-icon">🕉️</div><h4>Spiritual Trails</h4><p>Varanasi, Rishikesh, Amritsar — sacred journeys</p></div>
-      <div class="exp-card" onclick="showToast('Culinary tours available')"><div class="exp-icon">🍛</div><h4>Culinary Escapes</h4><p>Street food, royal thalis, spice markets</p></div>
-      <div class="exp-card" onclick="showToast('Wildlife safaris available')"><div class="exp-icon">🐅</div><h4>Wildlife Safaris</h4><p>Tigers, elephants, rhinos in national parks</p></div>
-      <div class="exp-card" onclick="showToast('Wellness retreats available')"><div class="exp-icon">🧘</div><h4>Wellness Retreats</h4><p>Ayurveda, yoga, meditation escapes</p></div>
-    </div>
+
+  <div class="exp-card" onclick="showToast('Spiritual journeys available')">
+    <img src="https://plus.unsplash.com/premium_photo-1697730447144-a2f7257e4a1f?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNwaXJpdHVhbCUyMGluZGlhfGVufDB8fDB8fHww" class="exp-img">
+    <h4>Spiritual Trails</h4>
+    <p>Varanasi, Rishikesh, Amritsar — sacred journeys</p>
+  </div>
+
+  <div class="exp-card" onclick="showToast('Culinary tours available')">
+    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D" class="exp-img">
+    <h4>Culinary Escapes</h4>
+    <p>Street food, royal thalis, spice markets</p>
+  </div>
+
+  <div class="exp-card" onclick="showToast('Wildlife safaris available')">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTad4NWESloVeOOrE2hisFmVBqIvzCaFMhrsw&s" class="exp-img">
+    <h4>Wildlife Safaris</h4>
+    <p>Tigers, elephants, rhinos in national parks</p>
+  </div>
+
+  <div class="exp-card" onclick="showToast('Wellness retreats available')">
+    <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lZGl0YXRpb258ZW58MHx8MHx8fDA%3D" class="exp-img">
+    <h4>Wellness Retreats</h4>
+    <p>Ayurveda, yoga, meditation escapes</p>
+  </div>
+
+</div>
   </div>
 </section>
 
@@ -855,7 +890,7 @@
       <div class="footer-col"><h4>Support</h4><ul><li><a href="#" onclick="showToast('Contact support'); return false;">Contact Us</a></li><li><a href="#" onclick="showToast('FAQs'); return false;">FAQs</a></li><li><a href="#" onclick="showToast('Cancellation policy'); return false;">Cancellation</a></li><li><a href="#" onclick="showToast('Terms'); return false;">Terms</a></li></ul></div>
       <div class="footer-col"><h4>Connect</h4><ul><li><a href="#" onclick="showToast('Call us'); return false;">📞 +91 11 4000 8000</a></li><li><a href="#" onclick="showToast('Email us'); return false;">✉️ hello@tatva.travel</a></li><li><a href="#" onclick="showToast('Instagram'); return false;">📸 @tatva.travel</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 TATVA — Discover India's Soul</span></div>
+    <div class="footer-bottom"><span>© 2026 TATVA — Discover India's Soul</span></div>
   </div>
 </footer>
 
