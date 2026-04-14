@@ -48,76 +48,112 @@
 
   /* Navigation */
   .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(249, 245, 235, 0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-light);
-    padding: 1rem 0;
-    transition: all 0.3s;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(249, 245, 235, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 0;
+  transition: all 0.3s;
+}
 
-  .nav-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.nav-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: -0.5px;
-  }
+/* LOGO */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+}
 
-  .logo span {
-    color: var(--terracotta);
-  }
+.logo span {
+  color: var(--terracotta);
+}
+
+/* NAV LINKS (desktop) */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--deep-charcoal);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: var(--terracotta);
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* BUTTON */
+.nav-btn {
+  background: var(--deep-charcoal);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background: var(--terracotta);
+  transform: translateY(-2px);
+}
+
+/* MENU ICON */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--deep-charcoal);
+}
+@media (max-width: 768px) {
 
   .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.active {
     display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: var(--deep-charcoal);
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-  }
-
-  .nav-links a:hover {
-    color: var(--terracotta);
-  }
-
-  .nav-btn {
-    background: var(--deep-charcoal);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.6rem;
-    border-radius: 40px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .nav-btn:hover {
-    background: var(--terracotta);
-    transform: translateY(-2px);
   }
 
   .menu-icon {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--deep-charcoal);
+    display: block;
   }
+
+  .nav-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+}
 
   /* Hero Section */
   .hero {
@@ -726,10 +762,11 @@
 
 <nav class="navbar">
   <div class="container nav-flex">
+
+    <!-- LEFT -->
     <div class="logo">TATVA<span>.</span></div>
-    <div class="menu-icon" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </div>
+
+    <!-- CENTER (Desktop links) -->
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#destinations">Destinations</a></li>
@@ -737,7 +774,18 @@
       <li><a href="#packages">Packages</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-btn" onclick="showToast('✨ A travel curator will reach out soon')">Enquire Now</button>
+
+    <!-- RIGHT -->
+    <div class="nav-right">
+      <button class="nav-btn" onclick="showToast('✨ A travel curator will reach out soon')">
+        Enquire Now
+      </button>
+
+      <div class="menu-icon" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+
   </div>
 </nav>
 
